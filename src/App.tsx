@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import "./App.css";
+import "./global-styles.css";
+import Menu from "./components/Menu";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Menu options={[
+        {id: "1", label: "opa1", link: "opa"},
+        {id: "2", label: "opefefwfwefa2", link: "opa"},
+        {id: "3", label: "opa3", link: "opa"},
+        {id: "4", label: "opa4", link: "opa"}
+      ]}/>
+      <div id="1" className="container-meu"></div>
+      <div id="2" className="container-meu"></div>
+      <div id="3" className="container-meu"></div>
+      <div id="4" className="container-meu"></div>
+      <div id="5" className="container-meu"></div>
+      <div id="6" className="container-meu"></div>
+      <div id="7" className="container-meu"></div>
+      <div id="8" className="container-meu"></div>
+    </>
   );
 }
 

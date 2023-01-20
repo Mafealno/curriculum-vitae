@@ -3,5 +3,6 @@
     --secondary-color: #A30877;
     --tertiary-color: #6708A3;
     --aux-color-1: #390899;
-    --aux-color-2: #990827
+    --aux-color-2: #990827;
+    font-family: 'Cairo', Arial, sans-serif !important;
 }
