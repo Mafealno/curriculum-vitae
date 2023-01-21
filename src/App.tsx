@@ -57,7 +57,7 @@ function App() {
               Desde a primeira aula eu me apaixonei por desenvolvimento. O <span className="text-aux-2 font-bold">universo</span> de possibilidades que o desenvolvimento poderia me proporcionar me fascinou desde o primeiro instante.
               Me formei no técnico e ingressei subsequentemente no ensino superior sendo bolsista na FIAP. Após dois anos, me formei com louvor, sendo premiado no festival NEXT no challenge Natura.</p>
               <div className="flex-800-col flex flex-wrap gap-5">
-                <article className="flex flex-col gap-2 flex-1">
+                <article className="flex flex-col gap-2.5 flex-1">
                   <p className="text-xl font-bold text-aux-2 mb-4">Detalhes Pessoais</p>
                   <div><span className="font-bold">Nome: </span>Marcelo Fernando Alves Nogueira</div>
                   <div><span className="font-bold">Nascimento: </span>26/12/1997</div>
@@ -68,11 +68,11 @@ function App() {
                   <p className="text-xl font-bold text-aux-2 mb-4">Meus interesses</p>
                   <div className="flex flex-wrap justify-between">
                     <Legend label="Video Game"><CgGames className="h-20 w-20"/></Legend>
-                    <Legend label="Futebol"><BiFootball className="h-16 w-16"/></Legend>
-                    <Legend label="Filmes/Series"><MdLocalMovies className="h-16 w-16"/></Legend>
-                    <Legend label="Música"><BiHeadphone className="h-16 w-16"/></Legend>
-                    <Legend label="Desenho"><MdDraw className="h-16 w-16"/></Legend>
-                    <Legend label="Física"><GiSpaceShuttle className="h-16 w-16"/></Legend>
+                    <Legend label="Futebol"><BiFootball className="h-14 w-14"/></Legend>
+                    <Legend label="Filmes/Series"><MdLocalMovies className="h-14 w-14"/></Legend>
+                    <Legend label="Música"><BiHeadphone className="h-14 w-14"/></Legend>
+                    <Legend label="Desenho"><MdDraw className="h-14 w-14"/></Legend>
+                    <Legend label="Física"><GiSpaceShuttle className="h-14 w-14"/></Legend>
                   </div>
                 </article>
               </div>
