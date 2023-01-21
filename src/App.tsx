@@ -76,7 +76,7 @@ function App() {
                   </div>
                 </article>
               </div>
-              <div className="flex justify-center items-center w-full mt-20">
+              <div className="flex justify-center items-center w-full mt-12">
                 <a
                 className="download-cv flex justify-center border-solid items-center w-50 py-1 px-4 border-4 rounded font-bold text-lg"
                 href={cv}
