@@ -10,7 +10,7 @@ import "./global-styles.css";
 
 //components
 import Social from "./components/Social";
-import Title from "./components/Title";
+import SectionTitle from "./components/SectionTitle";
 import Legend from "./components/Legend";
 
 //icons
@@ -50,7 +50,7 @@ function App() {
         <section id="spc-center">
           <ContainerSection id="2">
             <div className="w-full flex flex-col">
-              <Title title="SOBRE MIM"/>
+              <SectionTitle title="SOBRE MIM"/>
               <p style={{ textAlign: "justify" }} className="mb-5">Olá, seja bem vindo(a) o meu site, meu nome é <span className="text-aux-2 font-bold">Marcelo Nogueira</span> e eu sou apaixonado por desenvolvimento.
               Minha história com a TI começou por acaso. Já muito jovem, eu assistia tutoriais sobre mudar a versão do sistema operacional de smartphones
               (pode acreditar, eu fiz muito isso), porém, não fazia idéia que existia a profissão de desenvolvedor. Aos 15 anos, iniciei o curso Técnico de Informática na ETEC por um moitvo: eu amo video games.
@@ -87,19 +87,19 @@ function App() {
             </div>
           </ContainerSection>
           <ContainerSection id="3">
-            <Title title="HABILIDADES"/>
+            <SectionTitle title="HABILIDADES"/>
           </ContainerSection>
           <ContainerSection id="4">
-            <Title title="EXPERIÊNCIA"/>
+            <SectionTitle title="EXPERIÊNCIA"/>
           </ContainerSection>
           <ContainerSection id="5">
-            <Title title="ACADÊMICO"/>
+            <SectionTitle title="ACADÊMICO"/>
           </ContainerSection>
           <ContainerSection id="6">
-            <Title title="PORTIFÓLIO"/>
+            <SectionTitle title="PORTIFÓLIO"/>
           </ContainerSection>
           <ContainerSection id="7">
-            <Title title="CONTATOS"/>
+            <SectionTitle title="CONTATOS"/>
           </ContainerSection>
         </section>
       </main>

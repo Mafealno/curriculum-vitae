@@ -6,7 +6,7 @@ type Props = {
     title: string
 }
 
-function Title(props: Props) {
+function SectionTitle(props: Props) {
 
     const { title } = props;
 
@@ -18,4 +18,4 @@ function Title(props: Props) {
   )
 }
 
-export default Title
+export default SectionTitle
