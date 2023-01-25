@@ -15,10 +15,10 @@ function Social() {
 
   return (
     <>
-        <a href="https://github.com/Mafealno"><BsGithub className="h-8 w-7"/></a>
-        <a href="https://www.linkedin.com/in/marcelo-fernando-alves-nogueira-3b1562116/"><TiSocialLinkedin className="h-11 w-11"/></a>
-        <a href="http://api.whatsapp.com/send?1=pt_BR&phone=5511949679592"><BsWhatsapp className="h-7 w-7"/></a>
-        <a href="https://www.instagram.com/mafealno/"><TiSocialInstagram className="h-8 w-8"/></a>
+        <a href="https://github.com/Mafealno" target="_blank"><BsGithub className="h-8 w-7" /></a>
+        <a href="https://www.linkedin.com/in/marcelo-fernando-alves-nogueira-3b1562116/" target="_blank"><TiSocialLinkedin className="h-11 w-11"/></a>
+        <a href="http://api.whatsapp.com/send?1=pt_BR&phone=5511949679592" target="_blank"><BsWhatsapp className="h-7 w-7"/></a>
+        <a href="https://www.instagram.com/mafealno/" target="_blank"><TiSocialInstagram className="h-8 w-8"/></a>
         {showCopy && <span className="absolute bg-black rounded py-2 px-4 text-white">Copiado</span>}
         <a href="#" onClick={() => {
             navigator.clipboard.writeText("mafealno@gmail.com");
