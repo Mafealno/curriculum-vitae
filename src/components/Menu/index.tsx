@@ -44,13 +44,13 @@ function Menu(props: MenuProps) {
           {options.map((option : Option, index : number) => (
             <li
               key={index}
-              className="text-white hover:cursor-pointer last:border-yellow-500 last:outline last:p-2"
+              className="text-white hover:cursor-pointer last:border-yellow-500 last:outline last:p-2 hover:text-[var(--secondary-color)]"
               onClick={() => handleOptionClick(option)}>{option.label.toUpperCase()}</li>
           ))}
         </ul>
       </nav>
       {!isTop && (
-        <div className="fixed bottom-0 left-0 m-4">
+        <div className="fixed bottom-0 left-0 m-4 z-20">
           <ul className="flex flex-col gap-1 text-white left-0">
             {options.map((option: Option, index: number) => (
               <ItemMenu
@@ -90,7 +90,7 @@ function ItemMenu (props: ItemMenuProps): JSX.Element {
       {show && (
         <li key={key}
         style={{ "--animation-duration": `0.${9 - animationDuration}s`} as React.CSSProperties}
-        className={`${active ? "animation-slidein" : "animation-slideout"} bg-menu-suspended py-3 rounded-r-2xl absoulte hover:cursor-pointer`}
+        className={`${active ? "animation-slidein" : "animation-slideout"} bg-menu-suspended py-3 rounded-r-2xl absoulte hover:cursor-pointer hover:w-[210px]`}
         onClick={() => {
           onClick(option);
         }}

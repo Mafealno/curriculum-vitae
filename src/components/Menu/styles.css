@@ -1,12 +1,12 @@
 .bg-menu-suspended {
-  background-color: var(--aux-color-2);
+  background-color: var(--secondary-color);
 }
 
 .animation-slidein{
   animation-duration: var(--animation-duration) !important;
   animation: slidein;
   padding-left: 10px;
-  width: 150px;
+  width: 200px;
 }
 
 .animation-slideout{
@@ -66,14 +66,14 @@
       padding-left: 0;
     }
     to {
-      width: 150px;
+      width: 200px;
       padding-left: 10px;
     }
   }
 
   @keyframes slideout {
     from {
-      width: 150px;
+      width: 200px;
       padding-left: 10px;
     }
     to {
