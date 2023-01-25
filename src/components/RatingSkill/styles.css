@@ -1,0 +1,42 @@
+.range-container {
+    height: 5px;
+    width: 200px;
+    border-bottom: 15px;
+}
+
+.range-empty {
+    background-color: white;
+}
+
+.range-skill {
+    background-color: var(--secondary-color);
+}
+
+.bullet-skill {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 9999px;
+    background-color: var(--secondary-color);
+    position: absolute;
+}
+
+.title-skill {
+    overflow: hidden;
+}
+
+.marquee {
+    animation: marquee 5s linear infinite;
+  }
+
+  @keyframes marquee {
+    to {
+      transform: translate(-150%);
+    }
+    from {
+        transform: translate(144px);
+    }
+  }

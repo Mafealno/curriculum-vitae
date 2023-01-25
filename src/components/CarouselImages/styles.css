@@ -1,0 +1,24 @@
+.container-carousel-images {
+    height: 290px;
+    width: 100%;
+    max-width: 440px;
+    padding: 5px 0px;
+    display: flex;
+    overflow-y: hidden;
+    position: relative;
+    border-radius: 20px;
+}
+
+.button-arrow-image:hover {
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+
+.container-carousel-images::-webkit-scrollbar {
+    display: none;
+}
+
+.image-project {
+    transition: transform 1s;
+    transform: translateX(calc(var(--image-selected) * -100%));
+}

@@ -1,0 +1,83 @@
+.bg-menu-suspended {
+  background-color: var(--secondary-color);
+}
+
+.animation-slidein{
+  animation-duration: var(--animation-duration) !important;
+  animation: slidein;
+  padding-left: 10px;
+  width: 200px;
+}
+
+.animation-slideout{
+  animation-duration: var(--animation-duration) !important;
+  animation: slideout;
+  width: 0;
+}
+
+.animation-slidein,
+.animation-slideout {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.btn-menu-suspended {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-1, .icon-2, .icon-3 {
+  position: absolute;
+  z-index: 1;
+  width: 32px;
+  height: 3px;
+  background-color: white;
+  transition: all 400ms cubic-bezier(0.84, 0.06, 0.52, 1.8);
+}
+
+.icon-1 {
+  transform: translateY(-8px);
+  animation-delay: 100ms;
+}
+
+.icon-3 {
+  transform: translateY(8px);
+  animation-delay: 250ms;
+}
+
+.icon-1.active {
+  transform: rotate(40deg);
+  animation-delay: 100ms;
+}
+
+.icon-2.active {
+  opacity: 0;
+}
+
+.icon-3.active {
+  transform: rotate(-40deg);
+}
+
+@keyframes slidein {
+    from {
+      width: 0;
+      padding-left: 0;
+    }
+    to {
+      width: 200px;
+      padding-left: 10px;
+    }
+  }
+
+  @keyframes slideout {
+    from {
+      width: 200px;
+      padding-left: 10px;
+    }
+    to {
+      width: 0;
+      padding-left: 0;
+    }
+  }
