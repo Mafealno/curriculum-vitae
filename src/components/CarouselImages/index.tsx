@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useLayoutEffect, useEffect } from 'react'
+import React, { useMemo, useState, useLayoutEffect } from 'react'
 
 import { SimpleModal } from "../Modal";
 
@@ -28,7 +28,7 @@ function CarouselImages(props: Props) {
           return prev + 1;
         })
     }, 8000);
-    }, []);
+    }, [images.length]);
 
     useLayoutEffect(() => {
       const domElement = document.getElementById(subDirectory);
@@ -36,7 +36,7 @@ function CarouselImages(props: Props) {
         domElement.addEventListener('touchmove', (e) => e.preventDefault());
         domElement.addEventListener("scroll", () => domElement.scrollLeft = 0);
       }
-    }, [])
+    }, [subDirectory])
 
   return (
     <>
