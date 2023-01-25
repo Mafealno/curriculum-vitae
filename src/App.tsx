@@ -239,19 +239,19 @@ function App() {
                               {item.type === "git" && (
                                 <>
                                   <BsGithub className="w-4 h-4 mr-1"/>
-                                  <a href={item.url} className="font-bold text-center" target="_blank">{item.name}</a>
+                                  <a href={item.url} className="font-bold text-center" target="_blank" rel="noreferrer">{item.name}</a>
                                 </>
                               )}
                               {item.type === "download" && (
                                 <>
                                   <BsDownload className="w-4 h-4 mr-1"/>
-                                  <a href={item.url} download={item.name} className="font-bold text-center" target="_blank">{item.name}</a>
+                                  <a href={item.url} download={item.name} className="font-bold text-center" target="_blank" rel="noreferrer">{item.name}</a>
                                 </>
                               )}
                               {item.type === "site" && (
                                 <>
                                   <MdWeb className="w-4 h-4 mr-1"/>
-                                  <a href={item.url} className="font-bold text-center" target="_blank">{item.name}</a>
+                                  <a href={item.url} className="font-bold text-center" target="_blank" rel="noreferrer">{item.name}</a>
                                 </>
                               )}
                             </div>
