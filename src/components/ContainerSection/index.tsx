@@ -5,13 +5,12 @@ import "./styles.css";
 type Props = {
   children: JSX.Element,
   id: string,
-  backgroundImage?: string
   height?: string;
 }
 
 function ContainerSection(props: Props) {
 
-    const { children, id, backgroundImage, height } = props;
+    const { children, id, height } = props;
 
   return (
     <div
