@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState, useLayoutEffect, useEffect } from 'react'
 
 import { SimpleModal } from "../Modal";
 
@@ -30,20 +30,28 @@ function CarouselImages(props: Props) {
     }, 8000);
     }, []);
 
+    useLayoutEffect(() => {
+      const domElement = document.getElementById(subDirectory);
+      if(domElement){
+        domElement.addEventListener('touchmove', (e) => e.preventDefault());
+        domElement.addEventListener("scroll", () => domElement.scrollLeft = 0);
+      }
+    }, [])
+
   return (
     <>
-      <div className="container-carrossel-images"
-      style={{
-        "--image-selected": imageSelected
-      } as React.CSSProperties}
-      >
+      <div className="relative h-full w-full flex justify-center items-center">
         {imageSelected > 0 && <div
-        className="button-arrow-image absolute left-0 px-2 h-full z-10 w-11"
-        onClick={() => setImageSelected(prev => prev - 1 )}
-        />}
+        className="button-arrow-image left-0 px-[15px] h-full z-10 w-11 absolute"
+        onClick={() => setImageSelected(prev => prev - 1 )} />}
+        <div id={subDirectory} className="container-carousel-images"
+        style={{
+          "--image-selected": imageSelected
+        } as React.CSSProperties}
+        >
           {images.map((item, index) => (
-            <div className="min-w-[440px]">
-              <Legend position={index - 5} className={"w-[440px] image-project"} label={item.label}>
+            <div className="min-[300px] w-[440px] image-project">
+              <Legend position={index - 3} className={"min-[300px] min-w-[440px]"} label={item.label}>
                 <img
                 key={index}
                 src={`assetsProjects/${subDirectory}/${item.name}`}
@@ -54,10 +62,10 @@ function CarouselImages(props: Props) {
               </Legend>
             </div>
             ))}
-          {imageSelected < images.length - 1 && <div
-          className="button-arrow-image absolute right-0 px-2 h-full z-10 w-11"
-          onClick={() => setImageSelected(prev => prev + 1 )}
-          />}
+        </div>
+        {imageSelected < images.length - 1 && <div
+        className="button-arrow-image right-0 top-0 px-[15px] h-full z-10 w-11 absolute"
+        onClick={() => setImageSelected(prev => prev + 1 )} />}
       </div>
       <SimpleModal
       key={1}
