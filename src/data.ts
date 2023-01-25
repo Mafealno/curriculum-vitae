@@ -114,7 +114,7 @@ export const experiences = [
  export const projects = [
     {
         name: "Orçamentaria",
-        description: "Sistema web responsivo que tem como objetivo a emissão de orçamentos para pinturas imobiliarias e industrial.",
+        description: "Sistema web responsivo que tem como objetivo a emissão de orçamentos para pinturas imobiliarias e industriais.",
         mainFuctions: [
             "CRUD de Pessoas (cliente, fornecedor e funcionário)",
             "CRUD de Materiais",
@@ -145,12 +145,12 @@ export const experiences = [
     },
     {
         name: "Cronog",
-        description: "Aplicativo que te ajuda conquistar seus objetivos. Quer criar uma rotina de leitura, musculação, alimentação? Cadastre um novo Cronog, definindo icone e cor perosnalizadas. Não se preocupe, você receberá uma notificação no horário configurado para não esquuecer do seu objetivo.",
+        description: "Aplicativo que te ajuda conquistar seus objetivos. Quer criar uma rotina de leitura, musculação, alimentação? Cadastre um novo Cronog, definindo icone e cor perosnalizados. Não se preocupe, você receberá uma notificação no horário configurado para não esquecer do seu objetivo.",
         mainFuctions: [
             "Cadastro de rotinas personalizadas",
             "Lembrete por notificação da execução da rotina",
             "Criação de tarefas que permitirão que você acompanhe seu progresso",
-            "Reordenção de arrasta e solta das rotinas cadastradas",
+            "Reordenção arrasta e solta das rotinas cadastradas",
         ],
         mainTechnologies: ["Node", "ReactJs", "Typescript", "CapacitorJS", "Firebase", "Yup", "Storybook"],
         images: [
