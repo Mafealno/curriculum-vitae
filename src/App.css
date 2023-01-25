@@ -53,6 +53,12 @@ div.justify-between > span {
     }
 }
 
+@media (max-width: 1200px) {
+    .flex-1200-col {
+        flex-direction: column !important;
+    }
+}
+
 @media (min-width: 800px) {
     #container-app {
         padding: 0 10px 10px 10px;
@@ -67,6 +73,7 @@ div.justify-between > span {
         width: 33%;
     }
 }
+
 
 @media (min-width: 1500px) {
     #container-app {
