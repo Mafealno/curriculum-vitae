@@ -217,12 +217,12 @@ function App() {
           </ContainerSection>
           <ContainerSection id="7">
             <>
-              <SectionTitle title="PORTIFÓLIO" legend="Clique na imagem para ver em detalhess"/>
+              <SectionTitle title="PORTIFÓLIO" legend="Clique na imagem para ver em detalhes"/>
               <div className="flex flex-col gap-10">
                 {projects.map((item, index) => (
                   <div key={index} className="felx flex-col">
                     <p className="font-bold text-xl w-60 text-white bg-[var(--secondary-color)] py-4 pl-5 rounded ">{item.name}</p>
-                    <div className="flex flex-800-col">
+                    <div className="flex flex-1200-col">
                       <div className="flex-col flex-1 gap-2">
                         <div className="text-md text-justify mt-3">&emsp;&emsp;{item.description}</div>
                         <div className="flex flex-800-col justify-start mt-3">
@@ -239,19 +239,19 @@ function App() {
                               {item.type === "git" && (
                                 <>
                                   <BsGithub className="w-4 h-4 mr-1"/>
-                                  <a href={item.url} className="font-bold text-center">{item.name}</a>
+                                  <a href={item.url} className="font-bold text-center" target="_blank">{item.name}</a>
                                 </>
                               )}
                               {item.type === "download" && (
                                 <>
                                   <BsDownload className="w-4 h-4 mr-1"/>
-                                  <a href={item.url} download={item.name} className="font-bold text-center">{item.name}</a>
+                                  <a href={item.url} download={item.name} className="font-bold text-center" target="_blank">{item.name}</a>
                                 </>
                               )}
                               {item.type === "site" && (
                                 <>
                                   <MdWeb className="w-4 h-4 mr-1"/>
-                                  <a href={item.url} className="font-bold text-center">{item.name}</a>
+                                  <a href={item.url} className="font-bold text-center" target="_blank">{item.name}</a>
                                 </>
                               )}
                             </div>
