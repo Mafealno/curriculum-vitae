@@ -1,5 +1,5 @@
 #container-app {
-    background-color: var(--aux-color-1);
+    background-color: var(--primary-color);
     height: 100%;
     display: grid;
     grid-template-areas:
@@ -39,6 +39,12 @@ div.justify-between > span {
 .download-cv:hover{
     border-color: var(--aux-color-2);
     color: var(--aux-color-2);
+}
+
+@media (max-width: 900px) {
+    .flex-900-col {
+        flex-direction: column !important;
+    }
 }
 
 @media (max-width: 800px) {
