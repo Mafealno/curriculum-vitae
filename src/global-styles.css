@@ -1,12 +1,6 @@
 :root{
-    --primary-color: #44004D;
-    --secondary-color: #700652;
-    --tertiary-color: #6708A3;
-    --aux-color-1: #050129;
-    --aux-color-2: #990827;
+    --primary-color: #050129;
+    --secondary-color: #990827;
+    --tertiary-color: #03011C;
     font-family: 'Cairo', Arial, sans-serif !important;
-}
-
-.text-aux-2 {
-    color: var(--aux-color-2);
 }
