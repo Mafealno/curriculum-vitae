@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { OutputContext } from '../../App';
 import { Experience } from '../../interfaces/experience';
 
 import "./styles.css";
@@ -11,6 +12,8 @@ type Props = {
 function ExperienceLine(props: Props) {
 
     const { experiences, showExperience } = props;
+
+    const { dispatchOutput } = useContext(OutputContext);
 
   return (
     <div id="container-experience-line"className="flex items-top w-full h-44 pt-5">
@@ -25,7 +28,10 @@ function ExperienceLine(props: Props) {
                             <div className="indication-line"/>
                             <div
                             className="w-28 px-2 py-2 text-center font-bold text-lg hover:text-xl hover:text-[var(--aux-color-2)] hover:cursor-pointer hover:border-dashed hover:border"
-                            onClick={() => showExperience(item)}
+                            onClick={() => {
+                                showExperience(item);
+                                dispatchOutput({ type: "ADD_ACTION", payload: `Selecionada experiência da empresa '${item.companyName}'` })
+                            }}
                             >
                                 {item.companyName}
                             </div>

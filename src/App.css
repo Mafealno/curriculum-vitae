@@ -74,6 +74,27 @@ div.justify-between > span {
     }
 }
 
+#footer-1:checked ~ .footer-label-1 {
+    color: white;
+    text-underline-offset: 4px;
+    text-decoration-line: underline;
+}
+
+#footer-2:checked + .footer-label-2 {
+    color: white;
+    text-underline-offset: 4px;
+    text-decoration-line: underline;
+}
+
+#footer-3:checked + .footer-label-3 {
+    color: white;
+    text-underline-offset: 4px;
+    text-decoration-line: underline;
+}
+
+#content-footer::-webkit-scrollbar{
+    display: none;
+}
 
 @media (min-width: 1500px) {
     #container-app {

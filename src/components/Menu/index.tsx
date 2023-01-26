@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { OutputContext } from "../../App";
 
 import Option from "../../interfaces/option";
 
@@ -21,6 +22,8 @@ function Menu(props: MenuProps) {
   const [showMenuItem, setShowMenuItem] = useState(false);
   const [isTop, setIsTop] = useState(true);
 
+  const { dispatchOutput } = useContext(OutputContext);
+
   const { options } = props;
 
   document.addEventListener('scroll', () => {
@@ -30,11 +33,13 @@ function Menu(props: MenuProps) {
   });
 
   const handleOptionClick = (option: Option) => {
-    const element = document.getElementById(option.id);
-    if(element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    const domElement = document.getElementById(option.id);
+    if(domElement) {
+      domElement.scrollIntoView({ behavior: "smooth" });
       setShowMenuItem(false);
     }
+
+    setTimeout(() => dispatchOutput({ type: "ADD_ACTION", payload: `Selecionado o menu '${option.label}'` }), 1000);
   }
 
   return (
@@ -77,9 +82,9 @@ function Menu(props: MenuProps) {
 
 function ItemMenu (props: ItemMenuProps): JSX.Element {
 
-  const { key, option, animationDuration, active, onClick, } = props;
-
   const [show, setShow] = useState(false);
+
+  const { key, option, animationDuration, active, onClick, } = props;
 
   useEffect(() => {
     if(active) setShow(true);
@@ -91,9 +96,7 @@ function ItemMenu (props: ItemMenuProps): JSX.Element {
         <li key={key}
         style={{ "--animation-duration": `0.${9 - animationDuration}s`} as React.CSSProperties}
         className={`${active ? "animation-slidein" : "animation-slideout"} bg-menu-suspended py-3 rounded-r-2xl absoulte hover:cursor-pointer hover:w-[210px]`}
-        onClick={() => {
-          onClick(option);
-        }}
+        onClick={() => onClick(option)}
         >{option.label.toUpperCase()}</li>)}
     </>
   )
