@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useReducer, useEffect, useRef } from "react";
 
 //components
 import Social from "./components/Social";
@@ -27,6 +27,7 @@ import cv from "./assets/cv.pdf";
 
 //functions
 import { formatDateToMonthYear, getPeriod } from "./utils/date";
+import reducer from "./redux/output";
 
 //data
 import { sections, hardSkills, softSkills, experiences, educations, courses, projects } from "./data";
@@ -34,13 +35,29 @@ import { sections, hardSkills, softSkills, experiences, educations, courses, pro
 //styles
 import "./App.css";
 import "./global-styles.css";
+import { OutputAction, OutputState } from "./interfaces/reducer";
+
+export const OutputContext = React.createContext({
+  outputState: { actions: [] } as OutputState,
+  dispatchOutput: (action: OutputAction) => {}
+});
 
 function App() {
 
   const [experienceShow, setExperienceShow] = useState<Experience>();
+  const [footerSelected, setFooterSelected] = useState<number>(1);
+
+  const refFooter = useRef<HTMLDivElement>(null);
+
+  const [outputState, dispatchOutput] = useReducer(reducer, { actions: [{ date: new Date(), output: "Site carregado com sucesso", ms: `[${(Math.random() * 200).toFixed()}ms]` }] });
+
+  useEffect(() => {
+    if(refFooter.current)
+      refFooter.current.scrollTop = refFooter.current.scrollHeight;
+  }, [outputState])
 
   return (
-    <>
+    <OutputContext.Provider value={{ outputState, dispatchOutput }}>
       <section className="bg-code">
       <header id="1">
         <Menu options={sections.map(item => ({ id: item.id.toString(), label: item.name }))}/>
@@ -81,12 +98,12 @@ function App() {
                 <article className="flex flex-col gap-1 flex-1">
                   <p className="text-xl font-bold text-[var(--secondary-color)] mb-4">Meus interesses</p>
                   <div className="flex flex-wrap justify-between">
-                    <Legend className="!h-[80px]" label="Video Game"><CgGames className="h-16 w-16"/></Legend>
-                    <Legend className="!h-[80px]" label="Futebol"><BiFootball className="h-14 w-14"/></Legend>
-                    <Legend className="!h-[80px]" label="Filmes/Series"><MdLocalMovies className="h-14 w-14"/></Legend>
-                    <Legend className="!h-[80px]" label="Música"><BiHeadphone className="h-14 w-14"/></Legend>
-                    <Legend className="!h-[80px]" label="Desenho"><MdDraw className="h-14 w-14"/></Legend>
-                    <Legend className="!h-[80px]" label="Física"><GiSpaceShuttle className="h-14 w-14"/></Legend>
+                    <Legend className="!h-[80px]" label="Video Game"><CgGames className="h-16 w-16" onMouseEnter={() => dispatchOutput({ type: "ADD_ACTION", payload: "Passado mouse sobre icone 'Video Game'" })}/></Legend>
+                    <Legend className="!h-[80px]" label="Futebol"><BiFootball className="h-14 w-14" onMouseEnter={() => dispatchOutput({ type: "ADD_ACTION", payload: "Passado mouse sobre icone 'Futebol'" })}/></Legend>
+                    <Legend className="!h-[80px]" label="Filmes/Séries"><MdLocalMovies className="h-14 w-14" onMouseEnter={() => dispatchOutput({ type: "ADD_ACTION", payload: "Passado mouse sobre icone 'Filmes/Séries'" })}/></Legend>
+                    <Legend className="!h-[80px]" label="Música"><BiHeadphone className="h-14 w-14" onMouseEnter={() => dispatchOutput({ type: "ADD_ACTION", payload: "Passado mouse sobre icone 'Música'" })}/></Legend>
+                    <Legend className="!h-[80px]" label="Desenho"><MdDraw className="h-14 w-14" onMouseEnter={() => dispatchOutput({ type: "ADD_ACTION", payload: "Passado mouse sobre icone 'Desenho'" })}/></Legend>
+                    <Legend className="!h-[80px]" label="Física"><GiSpaceShuttle className="h-14 w-14" onMouseEnter={() => dispatchOutput({ type: "ADD_ACTION", payload: "Passado mouse sobre icone 'Física'" })}/></Legend>
                   </div>
                 </article>
               </div>
@@ -94,7 +111,9 @@ function App() {
                 <a
                 className="download-cv flex justify-center border-solid items-center w-50 py-1 px-4 border-4 rounded font-bold text-lg"
                 href={cv}
-                download={"MARCELO-NOGUEIRA-CV.pdf"}>
+                download={"MARCELO-NOGUEIRA-CV.pdf"}
+                onClick={() => dispatchOutput({ type: "ADD_ACTION", payload: "Clicado em 'Download CV'" })}
+                >
                   Download CV <HiOutlineDocumentDownload className="ml-4 w-6 h-6" />
                 </a>
               </div>
@@ -156,7 +175,6 @@ function App() {
                     let finalChar = ",";
                     if((index + 1) === experienceShow.functions.length)
                       finalChar = "]";
-
                     return (
                       <div className="flex" key={index}>
                         &emsp;&emsp;&emsp;<div className="text-lg">{"{"}</div>
@@ -238,20 +256,43 @@ function App() {
                             <div key={index} className="flex items-center hover:text-[var(--secondary-color)]">
                               {item.type === "git" && (
                                 <>
-                                  <BsGithub className="w-4 h-4 mr-1"/>
-                                  <a href={item.url} className="font-bold text-center" target="_blank" rel="noreferrer">{item.name}</a>
+                                  <a
+                                  href={item.url}
+                                  className="flex items-center font-bold text-center"
+                                  target="_blank" rel="noreferrer"
+                                  onClick={() => dispatchOutput({ type: "ADD_ACTION", payload: `Aberto link do repositório '${item.url}'` })}
+                                  >
+                                    <BsGithub className="w-4 h-4 mr-1"/>
+                                    {item.name}
+                                  </a>
                                 </>
                               )}
                               {item.type === "download" && (
                                 <>
-                                  <BsDownload className="w-4 h-4 mr-1"/>
-                                  <a href={item.url} download={item.name} className="font-bold text-center" target="_blank" rel="noreferrer">{item.name}</a>
+                                  <a
+                                  href={item.url}
+                                  download={item.name}
+                                  className="flex items-center font-bold text-center"
+                                  target="_blank" rel="noreferrer"
+                                  onClick={() => dispatchOutput({ type: "ADD_ACTION", payload: "Download do aplicativo efetuado" })}
+                                  >
+                                    <BsDownload className="w-4 h-4 mr-1"/>
+                                    {item.name}
+                                  </a>
                                 </>
                               )}
                               {item.type === "site" && (
                                 <>
-                                  <MdWeb className="w-4 h-4 mr-1"/>
-                                  <a href={item.url} className="font-bold text-center" target="_blank" rel="noreferrer">{item.name}</a>
+                                  <a
+                                  href={item.url}
+                                  className="flex items-center font-bold text-center"
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  onClick={() => dispatchOutput({ type: "ADD_ACTION", payload: `Aberto site '${item.url}'` })}
+                                  >
+                                    <MdWeb className="w-4 h-4 mr-1"/>
+                                    {item.name}
+                                  </a>
                                 </>
                               )}
                             </div>
@@ -259,7 +300,7 @@ function App() {
                         </div>
                       </div>
                       <div className="flex justify-center items-center flex-1 max-lg:mt-4">
-                        <CarouselImages subDirectory={item.subDirectory} images={item.images} />
+                        <CarouselImages subDirectory={item.subDirectory} images={item.images} nameProject={item.name}/>
                       </div>
                     </div>
                   </div>
@@ -269,7 +310,50 @@ function App() {
           </ContainerSection>
         </section>
       </main>
-    </>
+      <footer className="w-full h-[200px] bg-[var(--primary-color)] py-4 px-[120px] max-md:px-[20px] flex flex-col">
+        <div className="border-t-[0.1px] border-slate-400 border-solid flex text-md justify-start text-slate-400 border-t-2">
+          <input type={"radio"} defaultChecked name="footer-option" id="footer-1" className="hidden" onChange={() => setFooterSelected(1)}/>
+          <label htmlFor="footer-1" className="footer-label-1 flex justify-center items-center p-2 pl-0 hover:text-white hover:cursor-pointer">OUTPUT</label>
+          <input type={"radio"} name="footer-option" id="footer-2" className="hidden" onChange={() => setFooterSelected(2)}/>
+          <label htmlFor="footer-2" className="footer-label-2 flex justify-center items-center p-2 hover:text-white hover:cursor-pointer">PROBLEMS</label>
+          <input type={"radio"} name="footer-option" id="footer-3" className="hidden" onChange={() => setFooterSelected(3)}/>
+          <label htmlFor="footer-3" className="footer-label-3 flex justify-center items-center p-2 hover:text-white hover:cursor-pointer">TERMINAL</label>
+        </div>
+        <div id="content-footer" className="flex flex-col w-full h-full gap-1 text-white pt-2 overflow-x-auto" ref={refFooter}>
+          {footerSelected === 1 && (
+            outputState.actions.map((item, index) => (
+              <div key={index} className="flex flex-900-col gap-2 items-center">
+                <span className="flex gap-2">
+                  <div className="text-[var(--secondary-color)] font-bold">{item.date.toISOString()}</div>
+                  <div className="text-lime-700 font-bold">[info]</div>
+                </span>
+                <div className="max-lg:hidden"><BsArrowRight  className="max-h-[10px] max-w-[10px] min-h-[10px] min-w-[10px]"/></div>
+                <div className="text-center">{`${item.output} ${item.ms}`}</div>
+              </div>
+            ))
+          )}
+          {footerSelected === 2 && (
+            <div>No problems have detected in the workspace</div>
+          )}
+          {footerSelected === 3 && (
+            <>
+              <div className="text-[var(--secondary-color)] font-bold mb-2">Compiled successfully!</div>
+              <div className="flex flex-900-col mb-2">
+                <div>You can now view&ensp;</div>
+                <div className="font-bold">curriculum-vitae&ensp;</div>
+                <div>in the browser.</div>
+              </div>
+              <div className="flex flex-900-col">
+                <div>webpack compiled&ensp;</div>
+                <div className="text-[var(--secondary-color)] font-bold">successfully</div>
+              </div>
+              <div className="text-[var(--secondary-color)] mb-2">No issues found.</div>
+              <div>Copyright © {new Date().getFullYear().toString()} Marcelo Fernando Alves Nogueira</div>
+            </>
+          )}
+        </div>
+      </footer>
+    </OutputContext.Provider>
   );
 }
 

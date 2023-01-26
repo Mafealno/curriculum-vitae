@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useLayoutEffect } from 'react'
+import React, { useMemo, useState, useLayoutEffect, useContext } from 'react'
 
 import { SimpleModal } from "../Modal";
 
@@ -6,10 +6,12 @@ import { ImageProject } from '../../interfaces/projetct'
 
 import "./styles.css";
 import Legend from '../Legend';
+import { OutputContext } from '../../App';
 
 type Props = {
     images: ImageProject[],
     subDirectory: string,
+    nameProject: string,
 }
 
 function CarouselImages(props: Props) {
@@ -17,7 +19,9 @@ function CarouselImages(props: Props) {
     const [imageSelected, setImageSelected] = useState(0);
     const [imageZoom, setImageZoom] = useState<ImageProject>();
 
-    const { images, subDirectory } = props;
+    const { dispatchOutput } = useContext(OutputContext);
+
+    const { images, subDirectory, nameProject } = props;
 
     useMemo(() => {
       setInterval(() => {
@@ -58,6 +62,7 @@ function CarouselImages(props: Props) {
                 alt={item.label}
                 className="w-full h-full object-cover cursor-zoom-in"
                 onClick={() => setImageZoom(item)}
+                onMouseEnter={() => dispatchOutput({ type: "ADD_ACTION", payload: `Passado mouse sobre a imagem '${item.label}' do projeto '${nameProject}'` })}
                 />
               </Legend>
             </div>
