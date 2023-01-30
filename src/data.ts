@@ -193,7 +193,7 @@ export const experiences = [
         links: [
             { name: "Repositório frontend", url: "https://github.com/Aponta/aponta-client", type: "git" },
             { name: "Repositório backend", url: "https://github.com/Aponta/aponta-server", type: "git" },
-            { name: "aponta.com", url: "http://aponta-client.herokuapp.com/login", type: "site" },
+            { name: "aponta.marcelo-nogueira.com", url: "https://aponta.marcelo-nogueira.dev/login", type: "site" },
         ] as LinkProject[],
         subDirectory: "aponta"
     },
