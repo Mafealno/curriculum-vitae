@@ -9,6 +9,10 @@
   width: 200px;
 }
 
+.animation-slidein:hover{
+  width: 210px;
+}
+
 .animation-slideout{
   animation-duration: var(--animation-duration) !important;
   animation: slideout;

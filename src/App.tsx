@@ -336,20 +336,14 @@ function App() {
             <div>No problems have detected in the workspace</div>
           )}
           {footerSelected === 3 && (
-            <>
-              <div className="text-[var(--secondary-color)] font-bold mb-2">Compiled successfully!</div>
-              <div className="flex flex-900-col mb-2">
-                <div>You can now view&ensp;</div>
-                <div className="font-bold">curriculum-vitae&ensp;</div>
-                <div>in the browser.</div>
+            <div className="flex flex-col flex-1 justify-between pb-4">
+              <div className="text-[var(--secondary-color)] font-bold text-lg">Compiled successfully!</div>
+              <div className="flex">
+                <div><BsGithub className="w-4 h-4 mr-1"/></div>
+                <a href="https://github.com/Mafealno/curriculum-vitae" target={"_blank"} rel="noreferrer">https://github.com/Mafealno/curriculum-vitae</a>
               </div>
-              <div className="flex flex-900-col">
-                <div>webpack compiled&ensp;</div>
-                <div className="text-[var(--secondary-color)] font-bold">successfully</div>
-              </div>
-              <div className="text-[var(--secondary-color)] mb-2">No issues found.</div>
               <div>Copyright © {new Date().getFullYear().toString()} Marcelo Fernando Alves Nogueira</div>
-            </>
+            </div>
           )}
         </div>
       </footer>

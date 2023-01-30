@@ -67,7 +67,7 @@ function Menu(props: MenuProps) {
             ))}
           </ul>
           <button
-            className="btn-menu-suspended bg-menu-suspended text-white rounded-full mt-3 p-8"
+            className="btn-menu-suspended bg-menu-suspended text-white rounded-full mt-3 p-8 border border-solid border-[var(--primary-color)]"
             onClick={() => setShowMenuItem(prev => !prev)}
             >
               <div className={`icon-1 ${showMenuItem ? "active" : ""}`}></div>
@@ -95,7 +95,7 @@ function ItemMenu (props: ItemMenuProps): JSX.Element {
       {show && (
         <li key={key}
         style={{ "--animation-duration": `0.${9 - animationDuration}s`} as React.CSSProperties}
-        className={`${active ? "animation-slidein" : "animation-slideout"} bg-menu-suspended py-3 rounded-r-2xl absoulte hover:cursor-pointer hover:w-[210px]`}
+        className={`${active ? "animation-slidein" : "animation-slideout"} border border-solid border-[var(--primary-color)] bg-menu-suspended py-3 rounded-r-2xl absoulte hover:cursor-pointer`}
         onClick={() => onClick(option)}
         >{option.label.toUpperCase()}</li>)}
     </>
