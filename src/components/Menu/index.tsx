@@ -21,6 +21,7 @@ function Menu(props: MenuProps) {
 
   const [showMenuItem, setShowMenuItem] = useState(false);
   const [isTop, setIsTop] = useState(true);
+  const [isBottom, setIsBottom] = useState(false);
 
   const { dispatchOutput } = useContext(OutputContext);
 
@@ -28,8 +29,16 @@ function Menu(props: MenuProps) {
 
   document.addEventListener('scroll', () => {
     const isTop = window.scrollY < 50;
+
     setIsTop(isTop);
     if(isTop) setShowMenuItem(false);
+
+    if(window.outerWidth <= 700){
+      const bottom = (document.getElementById("root")?.offsetHeight! - window.screen.height) - window.scrollY < 200;
+
+      if(bottom !== isBottom) setIsBottom(bottom);
+    }else
+      setIsBottom(false);
   });
 
   const handleOptionClick = (option: Option) => {
@@ -68,6 +77,9 @@ function Menu(props: MenuProps) {
           </ul>
           <button
             className="btn-menu-suspended bg-menu-suspended text-white rounded-full mt-3 p-8 border border-solid border-[var(--primary-color)]"
+            style={{
+              "opacity": isBottom ? "0.2" : "1"
+            } as React.CSSProperties}
             onClick={() => setShowMenuItem(prev => !prev)}
             >
               <div className={`icon-1 ${showMenuItem ? "active" : ""}`}></div>
