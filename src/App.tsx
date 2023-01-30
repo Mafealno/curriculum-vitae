@@ -83,8 +83,8 @@ function App() {
             <div className="w-full flex flex-col">
               <SectionTitle title="SOBRE MIM"/>
               <p style={{ textAlign: "justify" }} className="mb-5">Olá, seja bem vindo(a) o meu site, meu nome é <span className="text-[var(--secondary-color)] font-bold">Marcelo Nogueira</span> e eu sou apaixonado por desenvolvimento.
-              Minha história com a TI começou por acaso. Já muito jovem, eu assistia tutoriais sobre atualizar a versão do sistema operacional de smartphones
-              (pode acreditar, eu fiz muito isso), porém, não fazia idéia que existia a profissão de desenvolvedor. Aos 15 anos, iniciei o curso écnico de Informática na ETEC por um moitvo: eu amo video games.
+              Minha história com a TI começou por acaso. Já muito jovem, eu assistia tutoriais sobre atualizar a versão do sistema operacional de srtphones
+              (pode acreditar, eu fiz muito isso), porém, não fazia idéia que existia a profissão de desenvolvedor. Aos 15 anos, iniciei o curso técnico de informática na ETEC por um motivo: eu amo video games.
               Desde a primeira aula eu me apaixonei por desenvolvimento. O <span className="text-[var(--secondary-color)] font-bold">universo</span> de possibilidades que o desenvolvimento poderia me proporcionar fascinou-me desde o primeiro instante.
               Me formei no técnico e ingressei subsequentemente no ensino superior sendo bolsista na FIAP. Após dois anos, me formei com louvor, sendo premiado no festival NEXT no challenge Natura.</p>
               <div className="flex-800-col flex flex-wrap gap-5">
@@ -112,8 +112,7 @@ function App() {
                 className="download-cv flex justify-center border-solid items-center w-50 py-1 px-4 border-4 rounded font-bold text-lg"
                 href={cv}
                 download={"MARCELO-NOGUEIRA-CV.pdf"}
-                onClick={() => dispatchOutput({ type: "ADD_ACTION", payload: "Clicado em 'Download CV'" })}
-                >
+                onClick={() => dispatchOutput({ type: "ADD_ACTION", payload: "Clicado em 'Download CV'" })}>
                   Download CV <HiOutlineDocumentDownload className="ml-4 w-6 h-6" />
                 </a>
               </div>
