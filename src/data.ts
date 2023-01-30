@@ -62,7 +62,7 @@ export const experiences = [
         endDate: new Date("07/01/2021"),
         mainTechnologies: ["C# .NET", "ReactJs", "Typescript", "SQL Server", "MySql"],
         functions: [
-            { description: "Criação de novos produtos baseados nas tecnologias" },
+            { description: "Criação de novos produtos" },
             { description: "Integração com APIs internas e externas" },
             { description: "Criação de novas funcionalidades para sistemas de contact center e telefonia" },
             { description: "Criação e gestão de querys e de estruturas de banco de dados" },
@@ -76,9 +76,11 @@ export const experiences = [
         functions: [
             { description: "Criação de novas funcionalidades para o ecommerce SmartesSales" },
             { description: "Criação de APIs de integração com sistemas externos" },
+            { description: "Criação de RPAs para integração e automatização de processos" },
             { description: "Desenvolvimento e implantação de novas funcionalidades para produtos de chatbot" },
             { description: "Gerenciamento de filas de mensageria" },
             { description: "Configuração de esteiras de deploy (CI/CD) no GitLab" },
+            { description: "Treinamento de funcionários/clientes" },
             { description: "Gerenciamento de crise" },
     ] as ExperienceFuction[] },
  ] as Experience[];
@@ -147,6 +149,7 @@ export const experiences = [
         name: "Cronog",
         description: "Aplicativo que te ajuda conquistar seus objetivos. Quer criar uma rotina de leitura, musculação, alimentação? Cadastre um novo Cronog, definindo icone e cor perosnalizados. Não se preocupe, você receberá uma notificação no horário configurado para não esquecer do seu objetivo.",
         mainFuctions: [
+            "Login",
             "Cadastro de rotinas personalizadas",
             "Lembrete por notificação da execução da rotina",
             "Criação de tarefas que permitirão que você acompanhe seu progresso",
