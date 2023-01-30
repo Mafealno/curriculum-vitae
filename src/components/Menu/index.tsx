@@ -95,7 +95,7 @@ function ItemMenu (props: ItemMenuProps): JSX.Element {
       {show && (
         <li key={key}
         style={{ "--animation-duration": `0.${9 - animationDuration}s`} as React.CSSProperties}
-        className={`${active ? "animation-slidein" : "animation-slideout"} border border-solid border-[var(--primary-color)] bg-menu-suspended py-3 rounded-r-2xl absoulte hover:cursor-pointer`}
+        className={`${active ? "animation-slidein border border-solid border-[var(--primary-color)]" : "animation-slideout"} bg-menu-suspended py-3 rounded-r-2xl absoulte hover:cursor-pointer`}
         onClick={() => onClick(option)}
         >{option.label.toUpperCase()}</li>)}
     </>
