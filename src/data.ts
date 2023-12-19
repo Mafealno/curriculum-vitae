@@ -72,6 +72,7 @@ export const experiences = [
         corporateName: "Semantix Tecnologia em Sistema de Informação",
         office: "Desenvolvedor Fullstack Pleno",
         startDate: new Date("08/01/2021"),
+        endDate: new Date("26/06/2023"),
         mainTechnologies: ["C# .NET", "ReactJs", "React Native", "TypeScript", "NodeJs", "Graphql", "Redis", "Postgresql", "SQL Server", "MySql", "RabbitMQ", "ElasticSearch"],
         functions: [
             { description: "Criação de novas funcionalidades para o ecommerce SmartesSales" },
@@ -83,6 +84,21 @@ export const experiences = [
             { description: "Treinamento de funcionários/clientes" },
             { description: "Gerenciamento de crise" },
     ] as ExperienceFuction[] },
+    {
+        companyName: "ePharma",
+        corporateName: "Epharma PBM do Brasil S.A.",
+        office: "Desenvolvedor Fullstack Pleno",
+        startDate: new Date("27/06/2023"),
+        mainTechnologies: ["C# .NET", "ReactJs", "TypeScript", "NodeJs", "Oracle", "SQL Server", "ServiceBus", "Micro Serviço", "DevOps"],
+        functions: [
+            { description: "Criação de APIs de integração com sistemas externos" },
+            { description: "Criação de RPAs para integração e automatização de processos" },
+            { description: "Criação de webhooks de uso externo" },
+            { description: "Gerenciamento de filas de mensageria" },
+            { description: "Configuração de esteiras de deploy (CI/CD) no Azure DevOps" },
+            { description: "Reuniões de definição com clientes internacional" },
+            { description: "Gerenciamento de crise" },
+    ] as ExperienceFuction[] }
  ] as Experience[];
 
  export const educations = [
