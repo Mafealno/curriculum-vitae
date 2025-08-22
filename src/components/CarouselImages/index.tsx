@@ -25,11 +25,11 @@ function CarouselImages(props: Props) {
 
     useMemo(() => {
       setInterval(() => {
-        setImageSelected(prev => {
-          if(prev >= images.length - 1)
-          return 1;
+        setImageSelected(prevState => {
+          if(prevState > images.length - 1)
+          return 0;
 
-          return prev + 1;
+          return prevState + 1;
         })
     }, 8000);
     }, [images.length]);
@@ -44,10 +44,11 @@ function CarouselImages(props: Props) {
 
   return (
     <>
-      <div className="relative h-full w-full flex justify-center items-center">
+      <div className="relative h-[400px] h-full w-full flex justify-center items-center">
+        <div className="min-[300px] w-[440px] absolute">
         {imageSelected > 0 && <div
-        className="button-arrow-image left-0 px-[15px] h-full z-10 w-11 absolute"
-        onClick={() => setImageSelected(prev => prev - 1 )} />}
+        className="button-arrow-image prev flex items-center justify-center left-0 px-[15px] h-full z-10 w-11 absolute"
+        onClick={() => setImageSelected(prev => prev - 1)}><span className="rotate-90">Anterior</span></div>}
         <div id={subDirectory} className="container-carousel-images"
         style={{
           "--image-selected": imageSelected
@@ -68,9 +69,10 @@ function CarouselImages(props: Props) {
             </div>
             ))}
         </div>
-        {imageSelected < images.length - 1 && <div
-        className="button-arrow-image right-0 top-0 px-[15px] h-full z-10 w-11 absolute"
-        onClick={() => setImageSelected(prev => prev + 1 )} />}
+            {imageSelected < images.length - 1 && <div
+            className="button-arrow-image prox flex items-center justify-center right-0 top-0 h-full z-10 w-11 absolute"
+            onClick={() => setImageSelected(prev => prev + 1)}><span className="-rotate-90">Próximo</span></div>}
+            </div>
       </div>
       <SimpleModal
       key={1}
