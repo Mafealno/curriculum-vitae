@@ -26,7 +26,7 @@ function ExperienceLine(props: Props) {
 
             setWidthTimeline(prevState => prevState + (200 + (mouths * 5)));
         })
-    }, [])
+    }, [experiences])
 
     const mountComponentExperience = (experience: Experience, index: number) : JSX.Element => {
 
