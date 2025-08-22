@@ -26,7 +26,7 @@ function CarouselImages(props: Props) {
     useMemo(() => {
       setInterval(() => {
         setImageSelected(prevState => {
-          if(prevState == images.length - 1)
+          if(prevState === images.length - 1)
           return 0;
 
           return prevState + 1;
