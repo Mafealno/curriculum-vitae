@@ -16,9 +16,9 @@ function SectionTitle(props: Props) {
     const { title, legend } = props;
 
   return (
-    <>
+    <div className="group">
       <div className="flex flex items-center gap-3 relative">
-        <p className="text-2xl font-bold">{title}</p>
+        <p className="text-2xl font-bold select-none">{title}</p>
         {legend && (
           <>
             <FaQuestionCircle className='h-6 w-6 text-[var(--secondary-color)]'
@@ -29,8 +29,8 @@ function SectionTitle(props: Props) {
           </>
         )}
       </div>
-      <div className="line-title w-12 h-1 rounded mb-5"></div>
-    </>
+      <div className="line-title w-12 h-1 rounded mb-5 transition-all duration-300 group-hover:w-28"></div>
+    </div>
   )
 }
 

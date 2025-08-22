@@ -320,13 +320,13 @@ function App() {
         <div id="content-footer" className="flex flex-col w-full h-full gap-1 text-white pt-2 overflow-x-auto" ref={refFooter}>
           {footerSelected === 1 && (
             outputState.actions.map((item, index) => (
-              <div key={index} className="flex flex-900-col gap-2 items-center">
-                <span className="flex gap-2">
+              <div key={index} className="flex flex-800-col gap-2 items-center">
+                <span className="flex gap-2 justify-center sm:min-w-[200px] md:min-w-[240px] sm:justify-start">
                   <div className="text-[var(--secondary-color)] font-bold">{item.date.toISOString()}</div>
                   <div className="text-lime-700 font-bold">[info]</div>
                 </span>
-                <div className="max-lg:hidden"><BsArrowRight  className="max-h-[10px] max-w-[10px] min-h-[10px] min-w-[10px]"/></div>
-                <div className="text-center">{`${item.output} ${item.ms}`}</div>
+                <div className="hidden 800:block w-5"><BsArrowRight  className="max-h-[10px] max-w-[10px] min-h-[10px] min-w-[10px]"/></div>
+                <div className="text-center 800:text-start w-full">{`${item.output} ${item.ms}`}</div>
               </div>
             ))
           )}
