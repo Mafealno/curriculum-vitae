@@ -18,19 +18,21 @@ export const sections = [
 ] as Section[];
 
 export const hardSkills = [
-    { name: "C#", rating: 4 },
+    { name: "C# .NET", rating: 4 },
     { name: "NodeJS", rating: 3 },
     { name: "Javascript/Typescript", rating: 4 },
-    { name: "ReactJS", rating: 4 },
+    { name: "NextJs", rating: 3 },
+    { name: "ReactJs", rating: 4 },
     { name: "SQL", rating: 5 },
     { name: "Firebase", rating: 2 },
+    { name: "MongoDb", rating: 3 },
     { name: "Elastic Search", rating: 3 },
-    { name: "Oracle", rating: 3 },
+    { name: "Oracle", rating: 4 },
     { name: "Service Bus", rating: 3 },
     { name: "API Restfull", rating: 5 },
     { name: "Git", rating: 4 },
-    { name: "RabbitMQ", rating: 3 },
-    { name: "Docker", rating: 3 },
+    { name: "Mensageria", rating: 3 },
+    { name: "Docker", rating: 2 },
     { name: "CI/CD", rating: 4 },
 ] as Skill[];
 
@@ -45,29 +47,25 @@ export const softSkills = [
 
 export const experiences = [
     {
-        companyName: "ORGM",
-        corporateName: "ORGM Software de Gestão",
-        office: "Estágio/Desenvolvedor Jr",
-        startDate: new Date("06/01/2017"),
-        endDate: new Date("12/01/2019"),
-        mainTechnologies: ["VBA", "C#", "JavaScript", "SQL Server"],
+        companyName: "ePharma",
+        corporateName: "Epharma PBM do Brasil S.A.",
+        office: "Desenvolvedor Fullstack Pleno",
+        startDate: new Date("06/27/2023"),
+        mainTechnologies: ["C# .NET (6 e >)", "Oracle", "Sql Server", "ServiceBus", "NextJs", "ReactJs", "TypeScript", "Micro Serviço", "DevOps"],
         functions: [
-            { description: "Desenvolvimento de funcionalidades para sistema ERP" },
-            { description: "Visita a clientes para levantamento de requisitos" },
-            { description: "Modelagem de banco de dados" },
-    ] as ExperienceFuction[] },
-    {
-        companyName: "A.Telecom",
-        corporateName: "A.Telecom Teleinformática",
-        office: "Desenvolvedor Fullstack",
-        startDate: new Date("10/01/2020"),
-        endDate: new Date("07/01/2021"),
-        mainTechnologies: ["C# .NET", "ReactJs", "Typescript", "SQL Server", "MySql"],
-        functions: [
-            { description: "Criação de novos produtos" },
-            { description: "Integração com APIs internas e externas" },
-            { description: "Criação de novas funcionalidades para sistemas de contact center e telefonia" },
-            { description: "Criação e gestão de querys e de estruturas de banco de dados" },
+            { description: "Criação de API's Rest para integração com sistemas externos" },
+            { description: "Criação de RPA's para integração e automatização de processos" },
+            { description: "Criação de webhooks de uso externo" },
+            { description: "Gerenciamento de filas de mensageria (ServiceBus)" },
+            { description: "Utilização de ORM's para acesso aos dados (Dapper e Entity Framework)" },
+            { description: "Criação de testes automatizados (FluentAssertions, Faker e Moq)" },
+            { description: "Manutenção de packages e procedures (Oracle)" },
+            { description: "Gerenciamento de código (Git)" },
+            { description: "Atualização de bibliotecas utilizadas como .NET e pacotes npm" },
+            { description: "Code review de outros desenvolvedores" },
+            { description: "Configuração de esteiras de deploy (CI/CD) no Azure DevOps" },
+            { description: "Reuniões de definição com clientes internacionais" },
+            { description: "Gerenciamento de crise" },
     ] as ExperienceFuction[] },
     {
         companyName: "Semantix",
@@ -87,21 +85,31 @@ export const experiences = [
             { description: "Treinamento de funcionários/clientes" },
             { description: "Gerenciamento de crise" },
         ] as ExperienceFuction[] },
-    {
-        companyName: "ePharma",
-        corporateName: "Epharma PBM do Brasil S.A.",
-        office: "Desenvolvedor Fullstack Pleno",
-        startDate: new Date("06/27/2023"),
-        mainTechnologies: ["C# .NET", "ReactJs", "TypeScript", "NodeJs", "Oracle", "SQL Server", "ServiceBus", "Micro Serviço", "DevOps"],
+        {
+        companyName: "A.Telecom",
+        corporateName: "A.Telecom Teleinformática",
+        office: "Desenvolvedor Fullstack",
+        startDate: new Date("10/01/2020"),
+        endDate: new Date("07/01/2021"),
+        mainTechnologies: ["C# .NET", "ReactJs", "Typescript", "SQL Server", "MySql"],
         functions: [
-            { description: "Criação de APIs de integração com sistemas externos" },
-            { description: "Criação de RPAs para integração e automatização de processos" },
-            { description: "Criação de webhooks de uso externo" },
-            { description: "Gerenciamento de filas de mensageria" },
-            { description: "Configuração de esteiras de deploy (CI/CD) no Azure DevOps" },
-            { description: "Reuniões de definição com clientes internacional" },
-            { description: "Gerenciamento de crise" },
-    ] as ExperienceFuction[] }
+            { description: "Criação de novos produtos" },
+            { description: "Integração com APIs internas e externas" },
+            { description: "Criação de novas funcionalidades para sistemas de contact center e telefonia" },
+            { description: "Criação e gestão de querys e de estruturas de banco de dados" },
+    ] as ExperienceFuction[] },
+        {
+        companyName: "ORGM",
+        corporateName: "ORGM Software de Gestão",
+        office: "Estágio/Desenvolvedor Jr",
+        startDate: new Date("06/01/2017"),
+        endDate: new Date("12/01/2019"),
+        mainTechnologies: ["VBA", "C#", "JavaScript", "SQL Server"],
+        functions: [
+            { description: "Desenvolvimento de funcionalidades para sistema ERP" },
+            { description: "Visita a clientes para levantamento de requisitos" },
+            { description: "Modelagem de banco de dados" },
+    ] as ExperienceFuction[] },
  ] as Experience[];
 
  export const educations = [
@@ -133,6 +141,41 @@ export const experiences = [
  ] as Course[];
 
  export const projects = [
+    {
+        name: "Micro-serviço System",
+        description: "Sistema baseado em micro serviços utilizando conceitos de service discovery, balanceamento de carga baseado no algoritmo Round Robin, logs centralizados, healthcheck dos serviços baseado no Eureka e etc.",
+        mainFuctions: [
+            "Micro API's CRUD utilizando Entity Framework para acesso a dados",
+            "Pattern Service Registry e Service Discovery",
+            "API com selfie registry",
+            "Pattern Log centralizado utilizando RabbitMQ",
+            "Balenciamento de carga com algoritmo Round Robin",
+            "Validação da disponilibilidade do serviço utilizando heart beats (baseado no Eureka)",
+            "Centralização em uma lib das 'funcionalidades' compartilhadas entre os serviços",
+            "Midleware de autenticação",
+            "Midleware de negócio",
+            "Diferentes níveis de acesso (usuários)",
+            "Autenticação utilizando schema RSA (chave pública e chave privada)"
+        ],
+        mainTechnologies: ["C# .NET", "Entity Framework", "MySql", "NodeJs", "MongoDb", "Memory Cache", "Algoritmo Round Robin"],
+        images: [
+            { name: "api-getaway-service-discovery.png", label: "Lógica de discovery de um serviço no API Getaway" },
+            { name: "api-getaway-service-load-balance.png", label: "Lógica de balanceamento de carga de um serviço no API Getaway utilizando Round Robin" },
+            { name: "service-registry-heart-beat.png", label: "Lógica healthcheck do Service Registry baseado no Eureka" },
+            { name: "service-registry-heart-beat.png", label: "Acesso aos dados do Service Registry (MongoDb)" },
+            { name: "lib-error-midleware.png", label: "Middleware de erro (centralizado na LIB)" },
+            { name: "lib-error-service.png", label: "Lógica de envio do erro ao serviço de mensageria (RabbitMQ)" },
+            { name: "simple-api-overview.png", label: "Estrutura de um micro serviço" },
+            { name: "simple-api-dockerfile.png", label: "Dockerfile um micro serviço" },
+            { name: "simple-api-compose-yaml.png", label: "Compose.yaml de um micro serviço" },
+            { name: "simple-api-init-scripts.png", label: "Script de criação de tabelas de um micro serviço" },
+            { name: "auth-service-application.png", label: "Lógica RSA pra geração de token de autenticação" },
+        ] as ImageProject[],
+        links: [
+            { name: "Repositórios", url: "https://github.com/orgs/orcamentaria-microservice/repositories", type: "git" },
+        ] as LinkProject[],
+        subDirectory: "micro-services"
+    },
     {
         name: "Orçamentaria",
         description: "Sistema web responsivo que tem como objetivo a emissão de orçamentos para pinturas imobiliarias e industriais.",
