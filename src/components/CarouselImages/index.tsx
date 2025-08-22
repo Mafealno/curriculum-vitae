@@ -26,7 +26,7 @@ function CarouselImages(props: Props) {
     useMemo(() => {
       setInterval(() => {
         setImageSelected(prevState => {
-          if(prevState > images.length - 1)
+          if(prevState == images.length - 1)
           return 0;
 
           return prevState + 1;
@@ -44,18 +44,18 @@ function CarouselImages(props: Props) {
 
   return (
     <>
-      <div className="relative h-[400px] h-full w-full flex justify-center items-center">
-        <div className="min-[300px] w-[440px] absolute">
+      <div className="relative h-[400px] w-full flex justify-center items-center">
+        <div className="min-[300px] w-[75%] absolute sm:w-[440px]">
         {imageSelected > 0 && <div
         className="button-arrow-image prev flex items-center justify-center left-0 px-[15px] h-full z-10 w-11 absolute"
-        onClick={() => setImageSelected(prev => prev - 1)}><span className="rotate-90">Anterior</span></div>}
+        onClick={() => setImageSelected(prev => prev - 1)}><span className="rotate-90 select-none">Anterior</span></div>}
         <div id={subDirectory} className="container-carousel-images"
         style={{
           "--image-selected": imageSelected
         } as React.CSSProperties}
         >
           {images.map((item, index) => (
-            <div className="min-[300px] w-[440px] image-project">
+            <div className="image-project ">
               <Legend position={index - 3} className={"min-[300px] min-w-[440px]"} label={item.label}>
                 <img
                 key={index}
@@ -71,7 +71,7 @@ function CarouselImages(props: Props) {
         </div>
             {imageSelected < images.length - 1 && <div
             className="button-arrow-image prox flex items-center justify-center right-0 top-0 h-full z-10 w-11 absolute"
-            onClick={() => setImageSelected(prev => prev + 1)}><span className="-rotate-90">Próximo</span></div>}
+            onClick={() => setImageSelected(prev => prev + 1)}><span className="-rotate-90 select-none">Próximo</span></div>}
             </div>
       </div>
       <SimpleModal

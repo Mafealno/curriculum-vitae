@@ -238,7 +238,7 @@ function App() {
               <div className="flex flex-col gap-10">
                 {projects.map((item, index) => (
                   <div key={index} className="felx flex-col">
-                    <p className="font-bold text-xl w-[23rem] text-white bg-[var(--secondary-color)] py-4 pl-5 rounded ">{item.name}</p>
+                    <p className="font-bold text-xl w-60 text-white bg-[var(--secondary-color)] py-4 pl-5 rounded ">{item.name}</p>
                     <div className="flex flex-1200-col">
                       <div className="flex-col flex-1 gap-2">
                         <div className="text-md text-justify mt-5">{item.description}</div>
