@@ -22,7 +22,7 @@ import { MdLocalMovies, MdDraw, MdWeb } from "react-icons/md";
 import { BsArrowRight, BsGithub, BsDownload } from "react-icons/bs";
 
 //assets
-import perfil from "./assets/perfil.png";
+import perfil from "./assets/perfil-2.jpg";
 import cv from "./assets/cv.pdf";
 
 //functions
