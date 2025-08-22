@@ -26,7 +26,7 @@ import perfil from "./assets/perfil-2.jpg";
 import cv from "./assets/cv.pdf";
 
 //functions
-import { formatDateToMonthYear, getPeriod } from "./utils/date";
+import { formatDateToMonthYear, getExperiencePeriod } from "./utils/date";
 import reducer from "./redux/output";
 
 //data
@@ -141,51 +141,51 @@ function App() {
             <div className="w-full relative">
               <SectionTitle title="EXPERIÊNCIA" legend="Clique na empresa para ter mais detalhes"/>
               <ExperienceLine showExperience={(experience) => setExperienceShow(experience)} experiences={experiences} />
-              <div className="text-lg">{"{"}</div>
-              <div className="flex">
-                <div className="text-[var(--secondary-color)] font-bold text-lg whitespace-nowrap">&emsp;"Nome da Empresa"&ensp;:&ensp;</div>
-                <div className="text-lg">"{experienceShow?.corporateName}",</div>
-              </div>
-              <div className="flex">
-                <div className="text-[var(--secondary-color)] font-bold text-lg whitespace-nowrap">&emsp;"Cargo"&ensp;:&ensp;</div>
-                <div className="text-lg">"{experienceShow?.office}",</div>
-              </div>
-              <div className="flex">
-                <div className="text-[var(--secondary-color)] font-bold text-lg whitespace-nowrap">&emsp;"Data de inicio"&ensp;:&ensp;</div>
-                <div className="text-lg whitespace-nowrap">"{experienceShow?.startDate && formatDateToMonthYear(experienceShow?.startDate!)}",</div>
-              </div>
-              <div className="flex">
-                <div className="text-[var(--secondary-color)] font-bold text-lg whitespace-nowrap">&emsp;"Data de fim"&ensp;:&ensp;</div>
-                <div className="flex flex col text-lg">
-                  "{experienceShow ? formatDateToMonthYear(experienceShow?.endDate ? experienceShow?.endDate : new Date()) : ""}",
-                  <div className="text-lg text-lime-700">&emsp;//{experienceShow && getPeriod(experienceShow?.startDate!, experienceShow?.endDate)}</div>
-                </div>
-              </div>
-              <div className="flex flex-800-col">
-                <div className="text-[var(--secondary-color)] font-bold text-lg whitespace-nowrap">&emsp;"Principais Tecnologias"&ensp;:&ensp;</div>
-                <div className="text-lg">[{experienceShow ? `${experienceShow?.mainTechnologies.map(item => ` "${item}"`).toString().substring(1)}` : ""}],</div>
-              </div>
-              <div className="flex flex-col">
-                <span className="flex">
-                  <div className="text-[var(--secondary-color)] font-bold text-lg whitespace-nowrap">&emsp;"Funções"</div>
-                  &ensp;:&ensp;<div className="text-lg">[{!experienceShow && "],"}</div>
-                </span>
-                  {experienceShow?.functions.map((item, index) => {
-                    let finalChar = ",";
-                    if((index + 1) === experienceShow.functions.length)
-                      finalChar = "]";
-                    return (
-                      <div className="flex" key={index}>
-                        &emsp;&emsp;&emsp;<div className="text-lg">{"{"}</div>
-                        &ensp;<div className="text-[var(--secondary-color)] font-bold text-lg">{`"Descrição"`}&ensp;</div>
-                        <div className="flex text-lg">
-                          {`"${item.description}" }${finalChar}`}
-                        </div>
-                      </div>)
-                    }
-                  )}
-              </div>
-              <div className="text-lg">{"}"}</div>
+                <div className="text-lg">{"{"}</div>
+                    <div className="flex">
+                      <div className="text-[var(--secondary-color)] font-bold text-lg whitespace-nowrap">&emsp;"Nome da Empresa"&ensp;:&ensp;</div>
+                      <div className="text-lg">"{experienceShow?.corporateName}",</div>
+                    </div>
+                    <div className="flex">
+                      <div className="text-[var(--secondary-color)] font-bold text-lg whitespace-nowrap">&emsp;"Cargo"&ensp;:&ensp;</div>
+                      <div className="text-lg">"{experienceShow?.office}",</div>
+                    </div>
+                    <div className="flex">
+                      <div className="text-[var(--secondary-color)] font-bold text-lg whitespace-nowrap">&emsp;"Data de Inicio"&ensp;:&ensp;</div>
+                      <div className="text-lg whitespace-nowrap">"{experienceShow?.startDate && formatDateToMonthYear(experienceShow?.startDate!)}",</div>
+                    </div>
+                    <div className="flex">
+                      <div className="text-[var(--secondary-color)] font-bold text-lg whitespace-nowrap">&emsp;"Data de Fim"&ensp;:&ensp;</div>
+                      <div className="flex flex col text-lg">
+                        "{experienceShow ? formatDateToMonthYear(experienceShow?.endDate ? experienceShow?.endDate : undefined) || "Atual" : ""}",
+                        <div className="text-lg text-lime-700">&emsp;//{experienceShow && getExperiencePeriod(experienceShow?.startDate!, experienceShow?.endDate)}</div>
+                      </div>
+                    </div>
+                    <div className="flex flex-800-col">
+                      <div className="text-[var(--secondary-color)] font-bold text-lg whitespace-nowrap">&emsp;"Principais Tecnologias"&ensp;:&ensp;</div>
+                      <div className="text-lg">[{experienceShow ? `${experienceShow?.mainTechnologies.map(item => ` "${item}"`).toString().substring(1)}` : ""}],</div>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="flex">
+                        <div className="text-[var(--secondary-color)] font-bold text-lg whitespace-nowrap">&emsp;"Funções"</div>
+                        &ensp;:&ensp;<div className="text-lg">[{!experienceShow && "],"}</div>
+                      </span>
+                        {experienceShow?.functions.map((item, index) => {
+                          let finalChar = ",";
+                          if((index + 1) === experienceShow.functions.length)
+                            finalChar = "]";
+                          return (
+                            <div className="flex" key={index}>
+                              &emsp;&emsp;&emsp;<div className="text-lg">{"{"}</div>
+                              &ensp;<div className="text-[var(--secondary-color)] font-bold text-lg">{`"Descrição"`}&ensp;</div>
+                              <div className="flex text-lg">
+                                {`"${item.description}" }${finalChar}`}
+                              </div>
+                            </div>)
+                          }
+                        )}
+                    </div>
+                <div className="text-lg">{"}"}</div>
             </div>
           </ContainerSection>
           <ContainerSection id="5">
@@ -238,13 +238,13 @@ function App() {
               <div className="flex flex-col gap-10">
                 {projects.map((item, index) => (
                   <div key={index} className="felx flex-col">
-                    <p className="font-bold text-xl w-60 text-white bg-[var(--secondary-color)] py-4 pl-5 rounded ">{item.name}</p>
+                    <p className="font-bold text-xl w-[23rem] text-white bg-[var(--secondary-color)] py-4 pl-5 rounded ">{item.name}</p>
                     <div className="flex flex-1200-col">
                       <div className="flex-col flex-1 gap-2">
-                        <div className="text-md text-justify mt-3">&emsp;&emsp;{item.description}</div>
+                        <div className="text-md text-justify mt-5">{item.description}</div>
                         <div className="flex flex-800-col justify-start mt-3">
                           <div className="text-md text-justify text-[var(--secondary-color)] font-bold min-w-[125px]">Funcionalidades&emsp;</div>
-                          <div className="text-justify">{item.mainFuctions.map(item => ` ${item}`).toString()}.</div>
+                          <div className="text-justify">{item.mainFuctions.map(item => ` ${item}`).toString()}</div>
                         </div>
                         <div className="flex flex-800-col justify-start mt-3">
                           <div className="text-md text-justify text-[var(--secondary-color)] font-bold min-w-[125px]">Tecnologias&emsp;</div>

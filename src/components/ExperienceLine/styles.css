@@ -18,6 +18,11 @@
     background: var(--secondary-color);
     opacity: 0.7;
     border: 1px white solid;
+    cursor: grab;
+}
+
+#container-experience-line::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
 }
 
 #container-experience-line::-webkit-scrollbar-thumb:hover {
