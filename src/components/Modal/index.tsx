@@ -27,6 +27,7 @@ export function SimpleModal(props: Props) {
         justifyContent: "center",
         alignItems: "center",
         zIndex: "100000000000",
+        border: "2px solid white"
       },
       content: {
         display: "flex",
