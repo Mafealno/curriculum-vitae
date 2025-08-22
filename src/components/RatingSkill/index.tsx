@@ -20,8 +20,8 @@ export function StarSkill(props: Props) {
         className="title-skill text-white text-lg font-bold w-36 mr-3"
         ><div id={`skill-${skill.name}`} className={`whitespace-nowrap ${skill.name.length > 15 ? "marquee" : ""}`}>{skill.name}</div></p>
         <span className="flex gap-3">
-          {Array.from(Array(skill.rating).keys()).map(() => (<AiFillStar className="h-8 w-8" style={{ color: "var(--secondary-color)" } as React.CSSProperties} />))}
-          {Array.from(Array(5 - skill.rating).keys()).map(() => (<AiFillStar className="h-8 w-8" />))}
+          {Array.from(Array(skill.rating).keys()).map(() => (<AiFillStar className="h-6 w-6 sm:h-8 sm:w-8" style={{ color: "var(--secondary-color)" } as React.CSSProperties} />))}
+          {Array.from(Array(5 - skill.rating).keys()).map(() => (<AiFillStar className="h-6 w-6 sm:h-8 sm:w-8" />))}
         </span>
     </div>
   )
