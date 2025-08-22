@@ -80,7 +80,7 @@ function CarouselImages(props: Props) {
       show={!!imageZoom?.name}
       closeModal={() => setImageZoom({} as ImageProject)}
       >
-        <img src={`assetsProjects/${subDirectory}/${imageZoom?.name}`} alt={imageZoom?.label} className="w-full h-full object-contain" />
+        <img src={`assetsProjects/${subDirectory}/${imageZoom?.name}`} alt={imageZoom?.label} className="h-full object-contain" />
       </SimpleModal>
     </>
   )

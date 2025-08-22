@@ -27,11 +27,14 @@ export function SimpleModal(props: Props) {
         justifyContent: "center",
         alignItems: "center",
         zIndex: "100000000000",
-        border: "2px solid white"
+        
+        
       },
       content: {
         display: "flex",
         flexDirection: "column",
+        border: "2px solid white",
+        overflow: "hidden"
       }
     } as Modal.Styles }>
       {children}
