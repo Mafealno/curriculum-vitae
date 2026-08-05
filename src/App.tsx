@@ -119,7 +119,7 @@ function App() {
           </ContainerSection>
           <ContainerSection id="3">
             <>
-              <SectionTitle title="HABILIDADES"/>
+              <SectionTitle title="HABILIDADES" legend="Escala de 1 a 5 estrelas: em Hard Skills indica meu nível de domínio técnico; em Soft Skills, o quanto a característica se destaca no meu perfil."/>
               <div className="flex-900-col flex">
                 <div className="flex flex-col flex-1 items-center">
                   <p className="text-xl font-bold text-[var(--secondary-color)] mb-4">Hard Skils</p>
@@ -233,7 +233,7 @@ function App() {
           </ContainerSection>
           <ContainerSection id="7">
             <>
-              <SectionTitle title="PORTIFÓLIO" legend="Clique na imagem para ver em detalhes"/>
+              <SectionTitle title="PORTFÓLIO" legend="Clique na imagem para ver em detalhes"/>
               <div className="flex flex-col gap-10">
                 {projects.map((item, index) => (
                   <div key={index} className="felx flex-col">

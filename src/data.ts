@@ -14,24 +14,24 @@ export const sections = [
     { id: 4, name: "Experiência", description: "" },
     { id: 5, name: "Acadêmico", description: "" },
     { id: 6, name: "Cursos/Certificados", description: "" },
-    { id: 7, name: "Portifólio", description: "" },
+    { id: 7, name: "Portfólio", description: "" },
 ] as Section[];
 
 export const hardSkills = [
-    { name: "C# .NET", rating: 4 },
-    { name: "NodeJS", rating: 3 },
+    { name: "C# .NET", rating: 5 },
+    { name: "Java", rating: 2 },
+    { name: "NodeJs", rating: 4 },
     { name: "Javascript/Typescript", rating: 4 },
-    { name: "NextJs", rating: 3 },
+    { name: "NextJs", rating: 4 },
     { name: "ReactJs", rating: 4 },
     { name: "SQL", rating: 5 },
     { name: "Firebase", rating: 2 },
     { name: "MongoDb", rating: 3 },
     { name: "Elastic Search", rating: 3 },
     { name: "Oracle", rating: 4 },
-    { name: "Service Bus", rating: 3 },
     { name: "API Restfull", rating: 5 },
     { name: "Git", rating: 4 },
-    { name: "Mensageria", rating: 3 },
+    { name: "Mensageria (RabbitMq, Service Bus)", rating: 4 },
     { name: "Docker", rating: 2 },
     { name: "CI/CD", rating: 4 },
 ] as Skill[];
@@ -50,8 +50,9 @@ export const experiences = [
         companyName: "ePharma",
         corporateName: "Epharma PBM do Brasil S.A.",
         office: "Desenvolvedor Fullstack Pleno",
-        startDate: new Date("06/27/2023"),
-        mainTechnologies: ["C# .NET (6 e >)", "Oracle", "Sql Server", "ServiceBus", "NextJs", "ReactJs", "TypeScript", "Micro Serviço", "DevOps"],
+        startDate: new Date("07/03/2023"),
+        endDate: new Date("08/05/2026"),
+        mainTechnologies: ["C# .NET (8 e >)", "Oracle", "Sql Server", "ServiceBus", "NextJs", "ReactJs", "TypeScript", "Micro Serviço", "DevOps"],
         functions: [
             { description: "Criação de API's Rest para integração com sistemas externos" },
             { description: "Criação de RPA's para integração e automatização de processos" },
@@ -70,10 +71,10 @@ export const experiences = [
     {
         companyName: "Semantix",
         corporateName: "Semantix Tecnologia em Sistema de Informação",
-        office: "Desenvolvedor Fullstack Pleno",
+        office: "Desenvolvedor Fullstack Jr/Pleno",
         //formato: mm/DD/yyyy
-        startDate: new Date("08/01/2021"),
-        endDate: new Date("06/26/2023"),
+        startDate: new Date("08/02/2021"),
+        endDate: new Date("07/03/2023"),
         mainTechnologies: ["C# .NET", "ReactJs", "React Native", "TypeScript", "NodeJs", "Graphql", "Redis", "Postgresql", "SQL Server", "MySql", "RabbitMQ", "ElasticSearch"],
         functions: [
             { description: "Criação de novas funcionalidades para o ecommerce SmartesSales" },
@@ -88,9 +89,9 @@ export const experiences = [
         {
         companyName: "A.Telecom",
         corporateName: "A.Telecom Teleinformática",
-        office: "Desenvolvedor Fullstack",
-        startDate: new Date("10/01/2020"),
-        endDate: new Date("07/01/2021"),
+        office: "Desenvolvedor Fullstack Jr",
+        startDate: new Date("10/05/2020"),
+        endDate: new Date("07/30/2021"),
         mainTechnologies: ["C# .NET", "ReactJs", "Typescript", "SQL Server", "MySql"],
         functions: [
             { description: "Criação de novos produtos" },
@@ -102,8 +103,8 @@ export const experiences = [
         companyName: "ORGM",
         corporateName: "ORGM Software de Gestão",
         office: "Estágio/Desenvolvedor Jr",
-        startDate: new Date("06/01/2017"),
-        endDate: new Date("12/01/2019"),
+        startDate: new Date("10/01/2017"),
+        endDate: new Date("01/03/2020"),
         mainTechnologies: ["VBA", "C#", "JavaScript", "SQL Server"],
         functions: [
             { description: "Desenvolvimento de funcionalidades para sistema ERP" },
@@ -147,13 +148,13 @@ export const experiences = [
         mainFuctions: [
             "Micro API's CRUD utilizando Entity Framework para acesso a dados",
             "Pattern Service Registry e Service Discovery",
-            "API com selfie registry",
+            "API com self registry",
             "Pattern Log centralizado utilizando RabbitMQ",
-            "Balenciamento de carga com algoritmo Round Robin",
-            "Validação da disponilibilidade do serviço utilizando heart beats (baseado no Eureka)",
+            "Balanceamento de carga com algoritmo Round Robin",
+            "Validação da disponibilidade do serviço utilizando heart beats (baseado no Eureka)",
             "Centralização em uma lib das 'funcionalidades' compartilhadas entre os serviços",
-            "Midleware de autenticação",
-            "Midleware de negócio",
+            "Middleware de autenticação",
+            "Middleware de negócio",
             "Diferentes níveis de acesso (usuários)",
             "Autenticação utilizando schema RSA (chave pública e chave privada)"
         ],
@@ -209,7 +210,7 @@ export const experiences = [
     },
     {
         name: "Cronog",
-        description: "Aplicativo que te ajuda conquistar seus objetivos. Quer criar uma rotina de leitura, musculação, alimentação? Cadastre um novo Cronog, definindo icone e cor perosnalizados. Não se preocupe, você receberá uma notificação no horário configurado para não esquecer do seu objetivo.",
+        description: "Aplicativo que te ajuda conquistar seus objetivos. Quer criar uma rotina de leitura, musculação, alimentação? Cadastre um novo Cronog, definindo icone e cor personalizados. Não se preocupe, você receberá uma notificação no horário configurado para não esquecer do seu objetivo.",
         mainFuctions: [
             "Login",
             "Cadastro de rotinas personalizadas",
@@ -217,7 +218,7 @@ export const experiences = [
             "Criação de tarefas que permitirão que você acompanhe seu progresso",
             "Reordenção arrasta e solta das rotinas cadastradas",
         ],
-        mainTechnologies: ["Node", "ReactJs", "Typescript", "CapacitorJS", "Firebase", "Yup", "Storybook"],
+        mainTechnologies: ["NodeJs", "ReactJs", "Typescript", "CapacitorJS", "Firebase", "Yup", "Storybook"],
         images: [
             { name: "login.png", label: "Login app" },
             { name: "cronog.png", label: "Cadastro de um Cronog" },
@@ -255,7 +256,7 @@ export const experiences = [
         links: [
             { name: "Repositório frontend", url: "https://github.com/Aponta/aponta-client", type: "git" },
             { name: "Repositório backend", url: "https://github.com/Aponta/aponta-server", type: "git" },
-            { name: "aponta.marcelo-nogueira.com", url: "https://aponta.marcelo-nogueira.dev/login", type: "site" },
+            { name: "aponta.marcelo-nogueira.dev", url: "https://aponta.marcelo-nogueira.dev/login", type: "site" },
         ] as LinkProject[],
         subDirectory: "aponta"
     },
@@ -268,7 +269,7 @@ export const experiences = [
             "Envio de email avisando para caso o bot se desconecte",
             "Integração com Dialoflow para entendimento de frases",
         ],
-        mainTechnologies: ["NodeJS", "ReactJs", "Typescript", "Firebase", "Dialogflow", "Nodemailer"],
+        mainTechnologies: ["NodeJs", "ReactJs", "Typescript", "Firebase", "Dialogflow", "Nodemailer"],
         images: [
             { name: "inicio-do-fluxo.png", label: "Inicio do fluxo" },
             { name: "menu-incial.png", label: "Menu com opções" },
