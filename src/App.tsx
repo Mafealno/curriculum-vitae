@@ -22,7 +22,7 @@ import { MdLocalMovies, MdDraw, MdWeb } from "react-icons/md";
 import { BsArrowRight, BsGithub, BsDownload } from "react-icons/bs";
 
 //assets
-import perfil from "./assets/perfil-2.jpg";
+import perfil from "./assets/perfil-3.jpg";
 
 //functions
 import { formatDateToMonthYear, getExperiencePeriod } from "./utils/date";
@@ -109,7 +109,7 @@ function App() {
               <div className="flex justify-center items-center w-full mt-12">
                 <a
                 className="download-cv flex justify-center border-solid items-center w-50 py-1 px-4 border-4 rounded font-bold text-lg"
-                href={"https://drive.google.com/file/d/1RVT3hV2Es4UNtm8WPPYPU87AINC_Yrf8/view?usp=drive_link"}
+                href={"https://drive.google.com/drive/folders/1ISxYE3ar-J5kTo-4R0iVU_PPu8V8b6Gp?usp=drive_link"}
                 download={"MARCELO-NOGUEIRA-CV.pdf"}
                 onClick={() => dispatchOutput({ type: "ADD_ACTION", payload: "Clicado em 'Download CV'" })}>
                   Download CV <HiOutlineDocumentDownload className="ml-4 w-6 h-6" />
