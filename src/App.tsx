@@ -119,7 +119,7 @@ function App() {
           </ContainerSection>
           <ContainerSection id="3">
             <>
-              <SectionTitle title="HABILIDADES" legend="Estrelas de 1 a 5. Em Hard Skills: 1-2 básico/teórico, 3 uso confortável no dia a dia, 4 domínio avançado, 5 especialista (inclui decisões arquiteturais). Em Soft Skills, reflete o quanto a característica se destaca no meu perfil, com base em feedbacks e experiências reais."/>
+              <SectionTitle title="HABILIDADES" legend="Escala de 1 a 5 estrelas: em Hard Skills indica meu nível de domínio técnico; em Soft Skills, o quanto a característica se destaca no meu perfil."/>
               <div className="flex-900-col flex">
                 <div className="flex flex-col flex-1 items-center">
                   <p className="text-xl font-bold text-[var(--secondary-color)] mb-4">Hard Skils</p>

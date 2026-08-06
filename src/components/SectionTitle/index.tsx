@@ -17,16 +17,16 @@ function SectionTitle(props: Props) {
 
   return (
     <div className="group">
-      <div className="flex flex items-center gap-3">
+      <div className="relative sm:static flex items-center gap-3">
         <p className="text-2xl font-bold select-none">{title}</p>
         {legend && (
-          <div className="relative flex items-center">
-            <FaQuestionCircle className='h-6 w-6 text-[var(--secondary-color)]'
+          <div className="sm:relative">
+            <FaQuestionCircle className='h-6 w-6 shrink-0 text-[var(--secondary-color)]'
             onMouseEnter={() => setShowLegend(true)}
             onMouseLeave={() => setShowLegend(false)}
             />
             {showLegend && (
-              <div className="cursor-default text-center leading-snug flex justify-center items-center z-30 bg-black rounded py-2 px-4 text-white absolute left-full top-0 ml-3 w-max max-w-[16rem] sm:max-w-xs whitespace-normal break-words shadow-lg">
+              <div className="cursor-default text-center leading-snug flex justify-center items-center z-30 bg-black rounded py-2 px-4 text-white absolute left-0 right-0 top-full mt-2 w-auto max-w-full sm:left-full sm:right-auto sm:top-0 sm:ml-3 sm:mt-0 sm:w-max sm:max-w-xs whitespace-normal break-words shadow-lg">
                 {legend}
               </div>
             )}
