@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { OutputContext } from '../../App';
 import { Experience } from '../../interfaces/experience';
 
@@ -17,16 +17,12 @@ function ExperienceLine(props: Props) {
     const { experiences, showExperience } = props;
     
     const [clicked, setClicked] = useState<boolean>(false);
-    const [widthTimeline, setWidthTimeline] = useState<number>(0);
     const { dispatchOutput } = useContext(OutputContext);
 
-    useEffect(() => {
-        experiences.forEach((experience) => {
-            let mouths = getExperienceMounths(experience.startDate, experience.endDate);
-
-            setWidthTimeline(prevState => prevState + (200 + (mouths * 5)));
-        })
-    }, [experiences])
+    const widthTimeline = experiences.reduce((total, experience) => {
+        let mouths = getExperienceMounths(experience.startDate, experience.endDate);
+        return total + (200 + (mouths * 5));
+    }, 0);
 
     const mountComponentExperience = (experience: Experience, index: number) : JSX.Element => {
 
@@ -60,7 +56,7 @@ function ExperienceLine(props: Props) {
   return (
     <div id="container-experience-line"className="flex items-top w-full h-44 pt-5">
         <div id="rotate-180" className="flex items-top w-full pt-[40px]">
-            <div className={`timeline`} style={{ width: `${ (widthTimeline + 650) / 2 }px` }}/>
+            <div className={`timeline`} style={{ width: `${ widthTimeline + 325 }px` }}/>
             {experiences.map((item, index) => mountComponentExperience(item, index))}
         </div>
     </div>
